@@ -6,6 +6,13 @@
   <title>Document</title>
 </head>
 <body>
-  
+  <h1>Price Graphs</h1>
+  {% for graph in graphs %}
+    <div>
+      <h2>{{ graph }}</h2>
+      <img src="{{ url_for('static', filename='graphs/' + graph) }}" alt="{{ graph }}">
+    </div>
+  {% endfor %}
+  <a href="{{ url_for('index') }}">Back to Home</a>
 </body>
 </html>
